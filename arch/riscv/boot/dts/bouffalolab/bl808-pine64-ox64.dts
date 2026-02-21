@@ -99,7 +99,7 @@
 
 	cs-gpios = <&pinctrl 12 GPIO_ACTIVE_LOW>;
 	spidev@0 {
-		compatible = "lwn,bk4";
+		compatible = "spidev";
 		reg = <0>;
 		status = "okay";
 		pinctrl-names = "default";
