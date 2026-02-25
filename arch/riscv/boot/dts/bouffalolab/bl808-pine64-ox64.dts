@@ -64,8 +64,8 @@
 
 	spidev_pins: spidev-pins {
 		bflb,pin-function = <BFLB_PINMUX_FUNC_SPI0>;
-		bflb,pins = <0 23 &pin_cfg_default>, // sck
-			<0 21 &pin_cfg_default>, // mosi
+		bflb,pins = <0 27 &pin_cfg_default>, // sck
+			<0 22 &pin_cfg_default>, // mosi
 			<0 25 &pin_cfg_input_enable>; // miso
 	};
 };
@@ -104,7 +104,7 @@
 	status = "okay";
 	num-cs = <1>;
 
-	cs-gpios = <&pinctrl 12 GPIO_ACTIVE_LOW>;
+	cs-gpios = <&pinctrl 24 GPIO_ACTIVE_LOW>;
 	eth0 {
 		compatible = "microchip,enc28j60";
 		reg = <0>;
