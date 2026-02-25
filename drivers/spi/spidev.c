@@ -714,6 +714,7 @@ static const struct spi_device_id spidev_spi_ids[] = {
 	{ .name = "spi-authenta" },
 	{ .name = "em3581" },
 	{ .name = "si3210" },
+        { .name = "enc28j60" },
 	{ .name = "spidev" },
 	{},
 };
@@ -743,6 +744,7 @@ static const struct of_device_id spidev_dt_ids[] = {
 	{ .compatible = "semtech,sx1301", .data = &spidev_of_check },
 	{ .compatible = "silabs,em3581", .data = &spidev_of_check },
 	{ .compatible = "silabs,si3210", .data = &spidev_of_check },
+        { .compatible = "microchip,enc28j60", .data = &spidev_of_check },
 	{ .compatible = "spidev", NULL },
 	{},
 };

@@ -246,7 +246,7 @@
 			syscon = <&sys_ctrl>;
 			bflb,fifo-depth = <32>;
 			bflb,max-bits-per-word = <32>;
-			status = "disabled";
+			status = "okay";
 		};
 
 		usb: usb@20072000 {

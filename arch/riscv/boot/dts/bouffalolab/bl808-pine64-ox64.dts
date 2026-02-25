@@ -55,11 +55,18 @@
 					<0 17 &pin_cfg_default>;
 	};
 
-	spidev_pins: spidev-pins {
+	spidev_mm_pins: spidev-mm-pins {
 		bflb,pin-function = <BFLB_PINMUX_FUNC_MM_SPI>;
 		bflb,pins = <0 23 &pin_cfg_default>, // sck
 			<0 21 &pin_cfg_default>, // mosi
 			<0 22 &pin_cfg_input_enable>; // miso
+	};
+
+	spidev_pins: spidev-pins {
+		bflb,pin-function = <BFLB_PINMUX_FUNC_SPI0>;
+		bflb,pins = <0 23 &pin_cfg_default>, // sck
+			<0 21 &pin_cfg_default>, // mosi
+			<0 25 &pin_cfg_input_enable>; // miso
 	};
 };
 
@@ -98,10 +105,11 @@
 	num-cs = <1>;
 
 	cs-gpios = <&pinctrl 12 GPIO_ACTIVE_LOW>;
-	spidev@0 {
-		compatible = "spidev";
+	eth0 {
+		compatible = "microchip,enc28j60";
 		reg = <0>;
 		status = "okay";
+                spi-max-frequency = <8000000>;
 		pinctrl-names = "default";
 		pinctrl-0 = <&spidev_pins>;
 	};
